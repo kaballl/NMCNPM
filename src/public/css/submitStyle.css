@@ -1,0 +1,58 @@
+.background-image {
+    background-image: url(/images/slider_background.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.top-class-container {
+    border-width: 5px;
+    border-style:double;
+    border-color:gold;
+    padding: 0px 10px;
+    margin: 50px 100px 50px;
+}
+
+.middle-submit-container {
+    border: 5px double gold;
+    padding: 10px;
+    margin: 0px 100px;  
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+.btn-send {
+    text-align: center;
+}
+.button {
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; 
+}
+
+.left-col-border{
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    border-left-width: 2px;
+    border-style: double;
+    border-color:  gold; 
+    text-align: center;
+}
+.right-col-border{
+    border-top-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-style: double;
+    border-color:  gold; 
+    text-align: center;
+}
+

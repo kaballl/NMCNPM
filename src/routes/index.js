@@ -7,9 +7,11 @@ const deadlineRouter=require('./deadline')
 const notificationRouter=require('./notification') 
 const uploadRouter=require('./upload') 
 const mycoursesRouter=require('./mycourses')
+const coursesRouter=require('./courses')
 
 function route(app){
    
+    app.use('/courses',coursesRouter)
     app.use('/my-courses',mycoursesRouter)
     app.use('/home',homeRouter)
     app.use('/login',loginRouter)

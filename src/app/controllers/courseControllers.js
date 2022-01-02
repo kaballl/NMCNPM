@@ -5,14 +5,14 @@ const{mongooseToObject}=require('../../util/mongoose')
 
 
 
-class CoursesController{
+class CourseController{
     
     
 
     //[GET]/singleproduct/:slug
     index(req,res,next){
         {
-            res.render('courses')
+            res.render('course')
         }
 
 
@@ -24,4 +24,4 @@ class CoursesController{
    
     
 
-module.exports= new CoursesController;
+module.exports= new CourseController;

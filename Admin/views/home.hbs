@@ -1,0 +1,130 @@
+<div class="content">
+    <div class="leftCol mr-3">
+        <div class="row h-100 m-auto bg-light border">
+            <div class="container-fluid">
+                <div class="row">
+                    <span class="text-info classList">Menu</span>
+                </div>
+                <div class="row">
+                    <div class="col-md">
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <a class="text-left text-success btn btn-block" href="adminPersonal.html">Thông tin cá nhân</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="text-left text-success btn btn-block" href="adminClassList.html">Tất cả khóa học</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="text-left text-success btn btn-block" href="adminRegister.html">Đăng kí thông tin người dùng</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="text-left text-success btn btn-block" href="adminAccount.html">Đăng xuất</a>
+                            </li>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="rightCol">
+        <div class="row mb-3">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Liên kết</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="">1.</a></li>
+                            <li><a href="">2.</a></li>
+                            <li><a href="">3.</a></li>
+                            <li><a href="">4.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Tài khoản</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Phạm Trường Khoa</h5>
+                        <span>Địa chỉ thư điện tử:</span>
+                        <a href="">18120419@student.hcmus.edu.vn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{{#section 'style' }}
+    <style>
+        * { margin: 0; padding: 0}
+
+        .classList {
+            font-size: 35px;
+            margin: 15px;
+            padding: 20px 0px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            margin: 50px 20px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+    </style>
+{{/section}}
+
+{{#section 'nav' }}
+    <div class="dropdown text-right">
+        <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span><i class="fas fa-user"></i></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item userInfo" href="adminPersonal.html">
+                <span class='mr-1'><i class="far fa-user-circle"></i></span>
+                Thông tin cá nhân
+            </a>
+            <a class="dropdown-item logOut" href="#">
+                <span class='mr-1'><i class="fas fa-sign-out-alt"></i></span>
+                Đăng xuất
+            </a>
+        </div>
+    </div>
+{{/section}}
+
+{{#section 'info' }}
+    <div class="information row mt-5">
+        <div class="col-md">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-warning">Thông báo</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="" class="text-danger">1. Thông báo 1</a></li>
+                        <li><a href="" class="text-danger">2. Thông báo 2</a></li>
+                        <li><a href="" class="text-danger">3. Thông báo 3</a></li>
+                        <li><a href="" class="text-danger">4. Thông báo 4</a></li>
+                        <li><a href="" class="text-danger">5. Thông báo 5</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hết information -->
+{{/section}}

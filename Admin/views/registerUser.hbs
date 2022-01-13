@@ -1,0 +1,216 @@
+<div class="content">
+    <div class="leftCol mr-3 border">
+        <div class="row h-100 m-auto bg-light">
+            <div class="container-fluid">
+                <div class="profile">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a href="#teacher" class="nav-link active" role="tab" data-toggle="tab">Dành cho giáo viên</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#student" class="nav-link" role="tab" data-toggle="tab">Dành cho sinh viên</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="teacher">
+                        <div class="row mx-3 my-5">
+                            <form class="myForm">
+                                <div class="form-group row">
+                                    <label for="firstname" class="col-md-3">Họ <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="firstname" name="firstname" placeholder="Nguyễn">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-md-3">Tên <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="lastname" placeholder="Văn A">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-md-3">Số điện thoại <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="number" class="col-md-8 form-control" id="phone" name="phone" placeholder="0123456789">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="password" class="col-md-8 form-control" id="password" name="password">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="region" class="col-md-4">Quốc gia</label>
+                                    <input type="text" class="col-md-8 form-control" id="region" name="region" placeholder="Việt Nam" readonly>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8">
+                                        <button type="submit" class="btn btn-success mr-3">Tạo tài khoản</button>
+                                        <button type="reset" class="btn btn-warning">Xóa hết</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="student">
+                        <div class="row mx-3 my-5">
+                            <form class="myForm">
+                                <div class="form-group row">
+                                    <label for="firstname" class="col-md-3">Họ <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="firstname" name="firstname" placeholder="Nguyễn">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-md-3">Tên <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="lastname" placeholder="Văn A">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="phone" class="col-md-3">Số điện thoại <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="number" class="col-md-8 form-control" id="phone" name="phone" placeholder="0123456789">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="mssv" class="col-md-3">Mã số sinh viên <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="number" class="col-md-8 form-control" id="mssv" name="mssv" placeholder="12345678">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="password" class="col-md-8 form-control" id="password" name="password">
+                                </div>
+                                <div class="form-group row">
+                                    <label for="region" class="col-md-4">Quốc gia</label>
+                                    <input type="text" class="col-md-8 form-control" id="region" name="region" placeholder="Việt Nam" readonly>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8">
+                                        <button type="submit" class="btn btn-success mr-3">Tạo tài khoản</button>
+                                        <button type="reset" class="btn btn-warning">Xóa hết</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightCol">
+        <div class="row mb-3">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Liên kết</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><a href="">1.</a></li>
+                            <li><a href="">2.</a></li>
+                            <li><a href="">3.</a></li>
+                            <li><a href="">4.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row my-3">
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Tài khoản</h3>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Phạm Trường Khoa</h5>
+                        <span>Địa chỉ thư điện tử:</span>
+                        <a href="">18120419@student.hcmus.edu.vn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{#section 'style' }}
+    <style>
+        * { margin: 0; padding: 0}
+
+        .profile {
+            font-size: 20px;
+            margin: 15px;
+            padding: 20px 0px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            margin: 50px 20px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .myForm {
+            width: 60%;
+            line-height: 35px
+        }
+    </style>
+{{/section}}
+
+
+{{#section 'nav' }}
+    <div class="dropdown text-right">
+        <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span><i class="fas fa-user"></i></span>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item userInfo" href="adminPersonal.html">
+                <span class='mr-1'><i class="far fa-user-circle"></i></span>
+                Thông tin cá nhân
+            </a>
+            <a class="dropdown-item logOut" href="#">
+                <span class='mr-1'><i class="fas fa-sign-out-alt"></i></span>
+                Đăng xuất
+            </a>
+        </div>
+    </div>
+{{/section}}
+
+
+{{#section 'info' }}
+    <div class="information row mt-5">
+        <div class="col-md">
+            <div class="card">
+                <div class="card-body mt-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="adminHome.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Đăng kí thông tin người dùng</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- hết information -->
+{{/section}}

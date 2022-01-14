@@ -1,5 +1,5 @@
 
-//const Info=require('../models/Product')
+const User=require('../models/User')
 const{mongooseToObject}=require('../../util/mongoose')
 
 
@@ -9,13 +9,34 @@ class InfoController{
     
     
 
-  //[GET]/singleproduct/:slug
+  
     index(req,res,next){
         {
-            res.render('info')
+            if(req.session.nameaccount){
+
+            
+            User.findOne({code:req.session.nameaccount})
+            .then(data=>{
+                
+                res.render('info',{data:mongooseToObject(data)})
+            })
+            }
+            else
+            {
+                res.redirect('login')
+            }
+            
+           
         }
 
 
+
+    }
+    edit(req,res,next)
+    {
+        User.updateOne({code:req.session.nameaccount},req.body)
+        .then(()=>res.redirect('/info'))
+        req.session=null
 
     }
 

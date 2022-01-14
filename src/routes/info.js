@@ -5,6 +5,7 @@ const infoController=require('../app/controllers/infoControllers')
 
 
 router.get('/',infoController.index)
+router.put('/edit',infoController.edit)
 
 
 

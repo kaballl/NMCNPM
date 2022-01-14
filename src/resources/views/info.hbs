@@ -33,7 +33,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
 
-            <a class="dropdown-item preview-item" href="#">
+            <a class="dropdown-item preview-item" href="/info">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-account-box-outline"></i>
@@ -54,7 +54,7 @@
                 <p class="preview-subject mb-1">Thông tin khóa học </p>
               </div>
             </a>
-            <a class="dropdown-item preview-item" href="#">
+            <a class="dropdown-item preview-item" href="/login">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-logout"></i>
@@ -74,85 +74,44 @@
             <div class="col-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <form class="form-sample">
+                  <form class="form-sample" method="post" action="/info/edit?_method=PUT">
                     <p > Hồ sơ cá nhân</p>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Họ</label>
+                          <label class="col-sm-3 col-form-label">Họ và tên</label>
                           <div class="col-sm-9">
-                            <input type="text" class="form-control" />
+                            <input type="text" class="form-control" id="name" name="name" value="{{data.name}}" />
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Tên</label>
-                          <div class="col-sm-9">
-                            <input type="text" class="form-control" />
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                         <div class="form-group row">
                           <label class="col-sm-3 col-form-label">Giới tính</label>
                           <div class="col-sm-9">
-                            <select class="form-control">
-                              <option>Nam</option>
-                              <option>Nữ</option>
-                            </select>
+                            <input type="text" class="form-control" id="gender" name="gender" value="{{data.gender}}" />
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Ngày sinh</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" placeholder="dd/mm/yyyy" />
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
+                    
+                    
                     <div class="row">
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                         <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Số điện thoại</label>
+                          <label class="col-sm-3 col-form-label">Địa chỉ</label>
                           <div class="col-sm-9">
-                            <input class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Email</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" />
+                            <input type="text"  class="form-control" id="address" name="address" value="{{data.address}}" />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Quốc gia</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group row">
-                          <label class="col-sm-3 col-form-label">Số nhà</label>
-                          <div class="col-sm-9">
-                            <input class="form-control" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mr-2">Xác nhận</button>
-                      <button class="btn btn-dark">Thoát</button>
+                    <button type="submit" class="btn btn-primary mr-2">Lưu lại</button>
+                      
                   </form>
                 </div>
               </div>

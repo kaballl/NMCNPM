@@ -6,15 +6,33 @@
                     <h4 class="text-info">Chi tiết người dùng</h4>
                 </div>
                 <div class="row mx-3">
-                    <form class="myForm">
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4">Địa chỉ thư điện tử</label>
-                            <input type="email" class="col-md-8 form-control" id="email" name="mail" readonly placeholder="18120419@student.hcmus.edu.vn">
-                        </div>
-                        <div class="form-group row">
-                            <label for="region" class="col-md-4">Quốc gia</label>
-                            <input type="text" class="col-md-8 form-control" id="region" name="region" readonly placeholder="Việt Nam">
-                        </div>
+                    <form class="myForm" method="POST", action="/admin/profile?i={{admin._id}}">
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-3">Họ và tên <i class="text-danger">(*)</i></label>
+                                    <textarea type="text" class="col-md-8 form-control" id="lastname" name="name" >{{admin.name}}</textarea>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-3">Email <i class="text-danger">(*)</i></label>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="email" value={{admin.email}}>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-3">Giới tính<i class="text-danger">(*)</i></label>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="gender" value={{admin.gender}}>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-3">Địa chỉ <i class="text-danger">(*)</i></label>
+                                    <textarea type="text" class="col-md-8 form-control" id="lastname" name="address" >{{admin.address}}</textarea>
+                                </div>
+                                <div class="form-group-now">
+                                    <h5>{{message1}}</h5>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-8">
+                                        <button type="submit" class="btn btn-success mr-3">Cập nhật</button>
+                                        <button type="reset" class="btn btn-warning">Thoát</button>
+                                    </div>
+                                </div>
                     </form>
                 </div>
             </div>
@@ -45,9 +63,9 @@
                         <h3>Tài khoản</h3>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Phạm Trường Khoa</h5>
+                        <h5 class="card-title">{{admin.name}}</h5>
                         <span>Địa chỉ thư điện tử:</span>
-                        <a href="">18120419@student.hcmus.edu.vn</a>
+                        <a href="">{{admin.email}}</a>
                     </div>
                 </div>
             </div>
@@ -86,7 +104,7 @@
 {{#section 'nav' }}
     <div class="dropdown text-right">
         <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span class="username mr-2">{{admin.name}}</span>
             <span><i class="fas fa-user"></i></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -107,7 +125,7 @@
         <div class="col-md">
             <div class="card">
                 <div class="card-body">
-                    <h3><i class="fas fa-user"></i> Phạm Trường Khoa</h3>
+                    <h3><i class="fas fa-user"></i> {{admin.name}}</h3>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="adminHome.html">Trang chủ</a></li>

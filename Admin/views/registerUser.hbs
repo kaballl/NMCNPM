@@ -15,38 +15,51 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="teacher">
                         <div class="row mx-3 my-5">
-                            <form class="myForm">
+                            <form class="myForm" method="POST" action="/admin/registerTeacher">
                                 <div class="form-group row">
-                                    <label for="firstname" class="col-md-3">Họ <i class="text-danger">(*)</i></label>
+                                    <label for="name" class="col-md-3">Họ và tên <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="text" class="col-md-8 form-control" id="firstname" name="firstname" placeholder="Nguyễn">
+                                    <input type="text" class="col-md-8 form-control" id="firstname" name="name" placeholder="Nguyễn">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lastname" class="col-md-3">Tên <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Email <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="text" class="col-md-8 form-control" id="lastname" name="lastname" placeholder="Văn A">
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="email" placeholder="1912@gmail.com">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="phone" class="col-md-3">Số điện thoại <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Mã số <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="number" class="col-md-8 form-control" id="phone" name="phone" placeholder="0123456789">
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="code" >
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Giới tính <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="gender" >
+                                </div>
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
                                     <input type="password" class="col-md-8 form-control" id="password" name="password">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="region" class="col-md-4">Quốc gia</label>
-                                    <input type="text" class="col-md-8 form-control" id="region" name="region" placeholder="Việt Nam" readonly>
+                                    <label for="email" class="col-md-3">Địa chỉ <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="address" >
+                                </div>
+                                <div class="form-group-now">
+                                    <h5>{{message}}</h5>
                                 </div>
                                 <div class="row text-center">
                                     <div class="col-md-4"></div>
@@ -58,47 +71,53 @@
                             </form>
                         </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="student">
+                    <div role="tabpanel" class="tab-pane" id="student" action="/admin/registerStudent">
                         <div class="row mx-3 my-5">
-                            <form class="myForm">
+                            <form class="myForm" method="POST" action="/admin/registerStudent">
                                 <div class="form-group row">
-                                    <label for="firstname" class="col-md-3">Họ <i class="text-danger">(*)</i></label>
+                                    <label for="name" class="col-md-3">Họ và tên <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="text" class="col-md-8 form-control" id="firstname" name="firstname" placeholder="Nguyễn">
+                                    <input type="text" class="col-md-8 form-control" id="firstname" name="name" placeholder="Nguyễn">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="lastname" class="col-md-3">Tên <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Email <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="text" class="col-md-8 form-control" id="lastname" name="lastname" placeholder="Văn A">
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="email" placeholder="1912@gmail.com">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="phone" class="col-md-3">Số điện thoại <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Mã số <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="number" class="col-md-8 form-control" id="phone" name="phone" placeholder="0123456789">
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="code" >
                                 </div>
                                 <div class="form-group row">
-                                    <label for="mssv" class="col-md-3">Mã số sinh viên <i class="text-danger">(*)</i></label>
+                                    <label for="email" class="col-md-3">Giới tính <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
-                                    <input type="number" class="col-md-8 form-control" id="mssv" name="mssv" placeholder="12345678">
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="gender" >
                                 </div>
                                 <div class="form-group row">
-                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
+                                    <label for="password" class="col-md-3">Mật khẩu <i class="text-danger">(*)</i></label>
                                     <div class="col-md-1 text-right dotDanger">
                                         <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
                                     </div>
                                     <input type="password" class="col-md-8 form-control" id="password" name="password">
                                 </div>
                                 <div class="form-group row">
-                                    <label for="region" class="col-md-4">Quốc gia</label>
-                                    <input type="text" class="col-md-8 form-control" id="region" name="region" placeholder="Việt Nam" readonly>
+                                    <label for="email" class="col-md-3">Địa chỉ <i class="text-danger">(*)</i></label>
+                                    <div class="col-md-1 text-right dotDanger">
+                                        <i class="fa fa-exclamation-circle text-danger" aria-hidden="true"></i>
+                                    </div>
+                                    <input type="text" class="col-md-8 form-control" id="lastname" name="address" >
+                                </div>
+                                <div class="form-group-now">
+                                    <h5>{{message1}}</h5>
                                 </div>
                                 <div class="row text-center">
                                     <div class="col-md-4"></div>
@@ -139,9 +158,9 @@
                         <h3>Tài khoản</h3>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Phạm Trường Khoa</h5>
+                        <h5 class="card-title">{{admin.name}}</h5>
                         <span>Địa chỉ thư điện tử:</span>
-                        <a href="">18120419@student.hcmus.edu.vn</a>
+                        <a href="">{{admin.email}}</a>
                     </div>
                 </div>
             </div>
@@ -180,7 +199,7 @@
 {{#section 'nav' }}
     <div class="dropdown text-right">
         <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span class="username mr-2">{{admin.name}}</span>
             <span><i class="fas fa-user"></i></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

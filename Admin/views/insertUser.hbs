@@ -3,28 +3,20 @@
         <div class="row h-100 m-auto bg-light ">
             <div class="container-fluid">
                 <div class="row profile">
-                    <div class="col-md-11">
-                        <h4 class="text-info">Chi tiết người dùng</h4>
-                    </div>
-                    <div class="col-md-1 text-right">
-                        <a type="button" class="btn btn-light" href="/admin/profile/edit">
-                            <i class="fas fa-user-cog" style="font-size: 30px"></i>
-                        </a>
-                    </div>
+                    <h4 class="text-info">Thêm giáo viên, sinh viên vào lớp học</h4>
                 </div>
-                <div class="row mx-3">
-                    <form class="myForm">
+                <div class="row m-3">
+                    <form class="myForm" method="POST" action="/admin/insertUser">
                         <div class="form-group row">
-                            <label for="email" class="col-md-4">Email</label>
-                            <input type="email" class="col-md-8 form-control" id="email" name="mail" readonly value={{admin.email}}>
+                            <label for="code" class="col-md-4">Mã số <i class="text-danger">(*)</i></label>
+                            <input type="text" class="col-md-8 form-control" id="code" name="code" required>
                         </div>
-                        <div class="form-group row">
-                            <label for="gender" class="col-md-4">Giới tính</label>
-                            <input type="gender" class="col-md-8 form-control" id="gender" name="gender" readonly value={{admin.gender}}>
-                        </div>
-                        <div class="form-group row">
-                            <label for="address" class="col-md-4">Địa chỉ</label>
-                            <textarea type="address" class="col-md-8 form-control" id="address" name="address" readonly >{{admin.address}}</textarea>
+                        <h5>{{message}}</h5>
+                        <div class="row text-center">
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-success mr-3">Thêm</button>
+                                <a type="button" class="btn btn-warning" href="/admin/classList">Hủy</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -83,11 +75,11 @@
         <div class="col-md">
             <div class="card">
                 <div class="card-body">
-                    <h3><i class="fas fa-user"></i> {{admin.name}}</h3>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin/home">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Thông tin cá nhân</li>
+                            <li class="breadcrumb-item"><a href="/admin/classList">Tất cả khóa học</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Thêm sinh viên, giáo viên vào lớp học</li>
                         </ol>
                     </nav>
                 </div>

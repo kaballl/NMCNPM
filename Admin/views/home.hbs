@@ -1,5 +1,5 @@
 <div class="content">
-    <div class="leftCol mr-3">
+    <div class="mr-3">
         <div class="row h-100 m-auto bg-light border">
             <div class="container-fluid">
                 <div class="row">
@@ -7,54 +7,20 @@
                 </div>
                 <div class="row">
                     <div class="col-md">
-                        <ul class="list-group">
+                        <ul class="list-group options">
                             <li class="list-group-item">
-                                <a class="text-left text-success btn btn-block" href="adminPersonal.html">Thông tin cá nhân</a>
+                                <a class="text-left text-success btn btn-block" href="/admin/profile">Thông tin cá nhân</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="text-left text-success btn btn-block" href="adminClassList.html">Tất cả khóa học</a>
+                                <a class="text-left text-success btn btn-block" href="/admin/classList">Tất cả khóa học</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="text-left text-success btn btn-block" href="adminRegister.html">Đăng kí thông tin người dùng</a>
+                                <a class="text-left text-success btn btn-block" href="/admin/registerUser">Đăng kí thông tin người dùng</a>
                             </li>
                             <li class="list-group-item">
-                                <a class="text-left text-success btn btn-block" href="adminAccount.html">Đăng xuất</a>
+                                <a class="text-left text-success btn btn-block" href="/admin/signin">Đăng xuất</a>
                             </li>
                             </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="rightCol">
-        <div class="row mb-3">
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Liên kết</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><a href="">1.</a></li>
-                            <li><a href="">2.</a></li>
-                            <li><a href="">3.</a></li>
-                            <li><a href="">4.</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row my-3">
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Tài khoản</h3>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{admin.name}}</h5>
-                        <span>Địa chỉ thư điện tử:</span>
-                        <a href="">{{admin.email}}</a>
                     </div>
                 </div>
             </div>
@@ -62,9 +28,17 @@
     </div>
 </div>
 
+{{#section 'script' }}
+    <script>
+        function showBtn() {
+            const btnSettings = document.getElementsByClassName('btnSetting');
 
-
-
+            for (var i = 0; i < btnSettings.length; i++) {
+                btnSettings[i].classList.toggle('show');
+            }
+        }
+    </script>
+{{/section}}
 
 {{#section 'style' }}
     <style>
@@ -77,13 +51,25 @@
         }
 
         .content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
             margin: 50px 20px;
         }
 
         ul li {
             list-style: none;
+        }
+
+        .options a {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .btnSetting {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .btnSetting.show {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 {{/section}}
@@ -91,15 +77,15 @@
 {{#section 'nav' }}
     <div class="dropdown text-right">
         <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span class="username mr-2">{{admin.name}}</span>
             <span><i class="fas fa-user"></i></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item userInfo" href="adminPersonal.html">
+            <a class="dropdown-item userInfo" href="/admin/profile">
                 <span class='mr-1'><i class="far fa-user-circle"></i></span>
                 Thông tin cá nhân
             </a>
-            <a class="dropdown-item logOut" href="#">
+            <a class="dropdown-item logOut" href="/admin/signin">
                 <span class='mr-1'><i class="fas fa-sign-out-alt"></i></span>
                 Đăng xuất
             </a>
@@ -112,15 +98,69 @@
         <div class="col-md">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="text-warning">Thông báo</h3>
+                    <h3 class="text-warning" style="display: inline-block;">Thông báo</h3>
+                    <a type="button" class="btn btn-light float-right" id="showBtnSetting" onclick="showBtn()">
+                        <i class="fas fa-cog" style="font-size: 30px"></i>
+                    </a>
                 </div>
                 <div class="card-body">
                     <ul>
-                        <li><a href="" class="text-danger">1. Thông báo 1</a></li>
-                        <li><a href="" class="text-danger">2. Thông báo 2</a></li>
-                        <li><a href="" class="text-danger">3. Thông báo 3</a></li>
-                        <li><a href="" class="text-danger">4. Thông báo 4</a></li>
-                        <li><a href="" class="text-danger">5. Thông báo 5</a></li>
+                        <li class="text-danger">
+                            <div class="row my-1">
+                                <div class="col-md-10">
+                                    1. Thông báo 1
+                                </div>
+                                <div class="col-md-2 btnSetting">
+                                    <button class="btn btn-warning float-right">Xóa</button>
+                                    <button class="btn btn-success mr-3 float-right">Sửa</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-danger my-1">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    2. Thông báo 2
+                                </div>
+                                <div class="col-md-2 btnSetting">
+                                    <button class="btn btn-warning float-right">Xóa</button>
+                                    <button class="btn btn-success mr-3 float-right">Sửa</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-danger my-1">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    3. Thông báo 3
+                                </div>
+                                <div class="col-md-2 btnSetting">
+                                    <button class="btn btn-warning float-right">Xóa</button>
+                                    <button class="btn btn-success mr-3 float-right">Sửa</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-danger my-1">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    4. Thông báo 4
+                                </div>
+                                <div class="col-md-2 btnSetting">
+                                    <button class="btn btn-warning float-right">Xóa</button>
+                                    <button class="btn btn-success mr-3 float-right">Sửa</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="text-danger my-1">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    5. Thông báo 5
+                                </div>
+                                <div class="col-md-2 btnSetting">
+                                    <button class="btn btn-warning float-right">Xóa</button>
+                                    <button class="btn btn-success mr-3 float-right">Sửa</button>
+                                </div>
+                            </div>
+                        </li>
+                        <button class="btn btn-info mt-3 float-right btnSetting">Thêm</button>
                     </ul>
                 </div>
             </div>
@@ -128,3 +168,5 @@
     </div>
     <!-- hết information -->
 {{/section}}
+
+

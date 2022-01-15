@@ -3,28 +3,32 @@
         <div class="row h-100 m-auto bg-light ">
             <div class="container-fluid">
                 <div class="row profile">
-                    <div class="col-md-11">
                         <h4 class="text-info">Chi tiết người dùng</h4>
-                    </div>
-                    <div class="col-md-1 text-right">
-                        <a type="button" class="btn btn-light" href="/admin/profile/edit">
-                            <i class="fas fa-user-cog" style="font-size: 30px"></i>
-                        </a>
-                    </div>
                 </div>
-                <div class="row mx-3">
-                    <form class="myForm">
+                <div class="row m-3">
+                    <form class="myForm" method="POST">
                         <div class="form-group row">
-                            <label for="email" class="col-md-4">Email</label>
-                            <input type="email" class="col-md-8 form-control" id="email" name="mail" readonly value={{admin.email}}>
+                            <label for="firstname" class="col-md-4">Họ và tên <i class="text-danger">(*)</i></label>
+                            <textarea type="text" class="col-md-8 form-control" id="firstname" name="name" required>{{admin.name}}</textarea>
                         </div>
                         <div class="form-group row">
-                            <label for="gender" class="col-md-4">Giới tính</label>
-                            <input type="gender" class="col-md-8 form-control" id="gender" name="gender" readonly value={{admin.gender}}>
+                            <label for="email" class="col-md-4">Email <i class="text-danger">(*)</i></label>
+                            <input type="email" class="col-md-8 form-control" id="email" name="email" value={{admin.email}}>
                         </div>
                         <div class="form-group row">
-                            <label for="address" class="col-md-4">Địa chỉ</label>
-                            <textarea type="address" class="col-md-8 form-control" id="address" name="address" readonly >{{admin.address}}</textarea>
+                            <label for="gender" class="col-md-4">Giới tính <i class="text-danger">(*)</i></label>
+                            <input type="gender" class="col-md-8 form-control" id="gender" name="gender" value={{admin.gender}}>
+                        </div>
+                        <div class="form-group row">
+                            <label for="address" class="col-md-4">Địa chỉ <i class="text-danger">(*)</i></label>
+                            <textarea type="address" class="col-md-8 form-control" id="address" name="address" >{{admin.address}}</textarea>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-success mr-3">Cập nhật</button>
+                                <a type="button" class="btn btn-warning" href="/admin/profile">Hủy</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -87,7 +91,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/admin/home">Trang chủ</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Thông tin cá nhân</li>
+                            <li class="breadcrumb-item"><a href="/admin/profile">Thông tin cá nhân</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa thông tin cá nhân</li>
                         </ol>
                     </nav>
                 </div>

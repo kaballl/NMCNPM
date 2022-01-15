@@ -1,80 +1,45 @@
 <div class="content">
-    <div class="leftCol mr-3">
-        <div class="row searchZone">
-            <div class="col-md">
-                <div class="input-group mb-3 border p-2">
-                    <input type="text" class="form-control" name="searchClass" placeholder="Tìm kiếm khóa học" aria-label="searchClass" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-info" type="button" id="searchBtn">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- hết searchZone -->
-
-        <div class="row h-100 m-auto bg-light border">
+    <div class="mr-3">
+        <div class="row h-100 mx-auto py-3 bg-light border">
             <div class="container-fluid">
-                <div class="row">
+                <div class="mb-3">
                     <span class="text-info classList">Danh sách khóa học</span>
+                    <a type="button" class="btn btn-light float-right" id="showBtnSetting" onclick="showBtn()">
+                        <i class="fas fa-cog" style="font-size: 30px"></i>
+                    </a>
                 </div>
-                <div class="row">
+                <div class="row my-3">
                     <div class="col-md">
+                        {{#each classes}}
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title mb-3">
-                                    <a class="text-success" href="#" style="font-size: 25px">Nhập môn công nghệ phần mềm</a>
+                                    <a class="text-success" style="font-size: 25px">{{this.name}}</a>
+                                    <a type="button" class="btn btn-info float-right btnSetting" href="/admin/{{this._id}}/insertUser">Thêm</a>
                                 </div>
-                                <ul>
-                                    <li>Giáo viên: <a class="card-link" href="">Nguyễn Thị Minh Tuyền</a></li>
-                                    <li>Giáo viên: <a class="card-link" href="">Nguyễn Thị Minh Tuyền</a></li>
-                                    <li>Giáo viên: <a class="card-link" href="">Nguyễn Thị Minh Tuyền</a></li>
-                                    <li>Giáo viên: <a class="card-link" href="">Nguyễn Thị Minh Tuyền</a></li>
-                                </ul>
+    
                             </div>
                         </div>
+                        {{/each}}
                     </div>
                 </div>
-            </div>
-        </div>
-
-    </div>
-    <div class="rightCol">
-        <div class="row mb-3">
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Liên kết</h3>
-                    </div>
-                    <div class="card-body">
-                        <ul>
-                            <li><a href="">1.</a></li>
-                            <li><a href="">2.</a></li>
-                            <li><a href="">3.</a></li>
-                            <li><a href="">4.</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row my-3">
-            <div class="col-md">
-                <div class="card">
-                    <div class="card-header">
-                        <h3>Tài khoản</h3>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Phạm Trường Khoa</h5>
-                        <span>Địa chỉ thư điện tử:</span>
-                        <a href="">18120419@student.hcmus.edu.vn</a>
-                    </div>
-                </div>
+                <a type="button" class="btn btn-info float-right btnSetting" href="/admin/insertClass">Thêm lớp học</a>
             </div>
         </div>
     </div>
 </div>
 
+{{#section 'script' }}
+    <script>
+        function showBtn() {
+            const btnSettings = document.getElementsByClassName('btnSetting');
+
+            for (var i = 0; i < btnSettings.length; i++) {
+                btnSettings[i].classList.toggle('show');
+            }
+        }
+    </script>
+{{/section}}
 
 {{#section 'style' }}
     <style>
@@ -87,13 +52,20 @@
         }
 
         .content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
             margin: 50px 20px;
         }
 
         ul li {
             list-style: none;
+        }
+
+        .btnSetting {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .btnSetting.show {
+            opacity: 1;
+            visibility: visible;
         }
     </style>
 {{/section}}
@@ -102,15 +74,15 @@
 {{#section 'nav' }}
     <div class="dropdown text-right">
         <button class="btn dropdown-toggle text-white font-weight-bold" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-            <span class="username mr-2">Phạm Trường Khoa</span>
+            <span class="username mr-2">{{admin.name}}</span>
             <span><i class="fas fa-user"></i></span>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item userInfo" href="adminPersonal.html">
+            <a class="dropdown-item userInfo" href="/admin/profile">
                 <span class='mr-1'><i class="far fa-user-circle"></i></span>
                 Thông tin cá nhân
             </a>
-            <a class="dropdown-item logOut" href="#">
+            <a class="dropdown-item logOut" href="/admin/signin">
                 <span class='mr-1'><i class="fas fa-sign-out-alt"></i></span>
                 Đăng xuất
             </a>
@@ -126,7 +98,7 @@
                 <div class="card-body mt-3">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="adminHome.html">Trang chủ</a></li>
+                            <li class="breadcrumb-item"><a href="/admin/home">Trang chủ</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Tất cả khóa học</li>
                         </ol>
                     </nav>

@@ -1,3 +1,31 @@
+<nav class="navbar p-0 sticky-top d-flex flex-row">
+    <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+      <h2><small class="text-muted"> XOL UNIVERSITY </small></h2>
+      <ul class="navbar-nav w-100">
+        <li class="nav-item w-100">
+          
+        </li>
+      </ul>
+      <ul class="navbar-nav navbar-nav-right">
+
+        <li class="nav-item dropdown border-left">
+            
+        <li class="nav-item dropdown border-left">
+          
+            
+            <a class="text-info" href="/login">Đăng nhập</a>
+         
+          <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+
+            <div class="dropdown-divider"></div>
+           
+          </div>
+          </li>
+        
+      </ul>
+      
+    </div>
+  </nav>
 <div class="super_container">
 
 	
@@ -58,9 +86,12 @@
 
 	<!-- Announcement -->
 
+	
+			
+	
 	<div class="events page_section">
 		<div class="container">
-			
+
 			<div class="row">
 				<div class="col">
 					<div class="section_title text-center">
@@ -71,6 +102,11 @@
 			
 			<div class="event_items">
 
+			
+
+				
+
+				{{#each datas}}
 				<!--  Announcement Item -->
 				<div class="row event_item">
 					<div class="col">
@@ -78,16 +114,16 @@
 
 							<div class="col-lg-2 order-lg-1 order-2">
 								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
+									<div class="event_day">{{this.day}}</div>
+									<div class="event_month">{{this.month}}</div>
 								</div>
 							</div>
 
 							<div class="col-lg-10 order-lg-2 order-3">
 								<div class="event_content">
-									<div class="event_name"><a class="trans_200" >Student Festival</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
+									<div class="event_name"><a class="trans_200" >{{this.title}}</a></div>
+								
+									<p>{{this.content}}</p>
 								</div>
 							</div>
 
@@ -96,58 +132,7 @@
 						</div>	
 					</div>
 				</div>
-
-				<!-- Announcement Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
-								</div>
-							</div>
-
-							<div class="col-lg-10 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" >Open day in the Univesrsity campus</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
-								</div>
-							</div>
-
-							
-
-						</div>	
-					</div>
-				</div>
-
-				<!--  Announcement Item -->
-				<div class="row event_item">
-					<div class="col">
-						<div class="row d-flex flex-row align-items-end">
-
-							<div class="col-lg-2 order-lg-1 order-2">
-								<div class="event_date d-flex flex-column align-items-center justify-content-center">
-									<div class="event_day">07</div>
-									<div class="event_month">January</div>
-								</div>
-							</div>
-
-							<div class="col-lg-10 order-lg-2 order-3">
-								<div class="event_content">
-									<div class="event_name"><a class="trans_200" >Student Graduation Ceremony</a></div>
-									<div class="event_location">Grand Central Park</div>
-									<p>In aliquam, augue a gravida rutrum, ante nisl fermentum nulla, vitae tempor nisl ligula vel nunc. Proin quis mi malesuada, finibus tortor.</p>
-								</div>
-							</div>
-
-							
-
-						</div>	
-					</div>
-				</div>
+				{{/each}}
 
 			</div>
 				

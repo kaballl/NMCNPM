@@ -1,18 +1,24 @@
 
-const Product=require('../models/Product')
+const WebAnnouncement=require('../models/WebAnnouncement')
 const{mongooseToObject}=require('../../util/mongoose')
+
 
 
 
 
 class HomeController{
     
-    
-
-  //[GET]/singleproduct/:slug
     index(req,res,next){
         {
-            res.render('home')
+            WebAnnouncement.find({})
+            .skip()
+            .limit()
+            .lean()
+            .then(datas=>{
+              req.session.destroy()
+              res.render('home',{datas})
+            })
+            .catch(next)
         }
 
 

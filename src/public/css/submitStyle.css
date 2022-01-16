@@ -11,7 +11,7 @@
     border-style:double;
     border-color:gold;
     padding: 0px 10px;
-    margin: 0px 100px 50px;
+    margin: 50px 100px 50px;
 }
 
 .middle-submit-container {
@@ -55,4 +55,8 @@
     border-color:  gold; 
     text-align: center;
 }
-
+.course-container {
+    border: 5px double gold;
+    margin: 0px 5px;
+    color: whitesmoke;
+}
